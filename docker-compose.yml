@@ -1,0 +1,16 @@
+version: '3'
+services:
+  prometheus:
+    container_name: micro_prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    privileged: true
+    image: prom/prometheus:v2.48.0
+    ports:
+      - '9090:9090'
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - prom_data:/prometheus
+
+volumes:
+  prom_data:

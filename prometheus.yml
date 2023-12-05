@@ -1,0 +1,18 @@
+global:
+  scrape_interval: "15s"
+
+scrape_configs:
+  - job_name: 'calculator-deployment'
+    static_configs:
+      - targets: ['192.168.59.100:30001']
+    metrics_path: /metrics
+
+  - job_name: 'print-name-deployment'
+    static_configs:
+      - targets: ['192.168.59.100:30002']
+    metrics_path: /metrics
+
+  - job_name: 'to-do-list-deployment'
+    static_configs:
+      - targets: ['192.168.59.100:30003']
+    metrics_path: /metrics

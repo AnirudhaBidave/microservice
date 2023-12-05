@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: calculator-deployment
+  labels:
+    tire: frontend
+spec:
+  selector:
+    matchLabels:
+      app: calculator
+  replicas: 1
+  template:
+    metadata:
+      name: calculator
+      labels:
+        app: calculator
+    spec:
+      containers:
+        - name: calculator
+          image: anirudhabidave/calculator

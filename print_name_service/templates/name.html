@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Print Name</title>
+</head>
+<body>
+    <h1>Print Name</h1>
+    <form method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <button type="submit">Submit</button>
+    </form>
+    <p>Hello, {{ name }}</p>
+</body>
+</html>

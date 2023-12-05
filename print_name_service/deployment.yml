@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: print-name-deployment
+  labels:
+    tire: frontend
+spec:
+  selector:
+    matchLabels:
+      app: print-name
+  replicas: 1
+  template:
+    metadata:
+      name: print-name
+      labels:
+        app: print-name
+    spec:
+      containers:
+        - name: print-name
+          image: anirudhabidave/print_name
